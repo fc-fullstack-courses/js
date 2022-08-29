@@ -28,7 +28,6 @@ console.log({ value1: 123 }); // object - компазитный тип данн
   let myName = 'Kyrylo'; // инициализация переменной
   
   let veryLongVariableName = 'test';
-
 let _; // lodash
 let $; // JQuery
 */
@@ -62,3 +61,17 @@ console.log(number2); // после ошибок JS останавливает �
 // const number3; Ошибка
 
 const number3 = number1;
+let data = 25;
+
+const data2 = 'test';
+'24' // 24
+'sdyhbfguyg bsufbdsuygfbgua' // NaN
+
+const text = "Антон сказал: \n\t\t\t\t\t\t\t\"Все ок\u00E6\"";
+const text2 = 'Антон сказал: "Все ок"';
+const text3 = `Д'артаньян сказал: 
+"Все ок"`;
+// alert(text);
+console.log(text);
+console.log(text3);
+// console.log("Антон сказал: \"Все ок\"")
