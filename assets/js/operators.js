@@ -79,3 +79,51 @@ num -= 15;
 
 console.log(num);
 // выведите в консоль значение num
+
+
+10 > 5 // true
+10 >= 10 // true
+10 < 10 // false
+
+'test' > 'text' // false s < x
+'test' > 't' // true
+
+10 === 10 // true
+10 !== 5 // true
+1 === '1' // false
+
+let val = NaN;
+
+console.log(val === val); // false для NaN
+
+isNaN(val) // false для NaN
+
+1 == '1' // true ОЧЕНЬ ПЛОХО
+
+const number = 100;
+
+number > 20
+
+number < 50
+
+console.log(20 < number < 50 ); // true хотя должно быть false
+console.log(number > 20 && number < 50)
+
+/*
+
+ AND (&&) возвращает первую ложь или последнюю правду
+  x   |  y   | res
+ true   true    true
+ true  false    false
+ false true     false
+ false false    false
+
+
+ OR (||) возвращает первую правду или последнюю ложь
+
+   x   |  y   | res
+ true   true    true
+ true  false    true
+ false true     true
+ false false    false
+*/
