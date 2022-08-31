@@ -22,25 +22,32 @@
 
 // functional declaration
 
-// arrow function
+// // arrow function
 
-const input1 = prompt('Enter first number');
-const input2 = prompt('Enter second number');
+// const input1 = prompt('Enter first number');
+// const input2 = prompt('Enter second number');
 
 // functional experssion
 const getSumOfTwo = function (num1, num2) {
   // тело функции
   const result = +num1 + +num2;
 
-  const sumMessage = num1 + ' + ' + num2 + ' = ' + result;
-
   return result;
-
-  alert(1232423);
 };
 
 // getSumOfTwo(10, 50);
 // getSumOfTwo(-5, 15);
-const result = getSumOfTwo(input1, input2);
+// const result = getSumOfTwo(input1, input2);
 
-alert(result);
+// alert(result);
+
+// Реализовать функцию которая принимает имя пользователя
+// и будет с ним здороватся
+const createGreeting = function (username) {
+  const message = 'Hello ' + username;
+  return message;
+};
+
+const greetMeMessage = createGreeting('Kyrylo');
+
+alert(createGreeting('Kyrylo'));
