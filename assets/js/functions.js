@@ -20,16 +20,27 @@
 
 // alert(num1 + ' + ' + num2 + ' = ' + (+num1 + Number(num2)));
 
-
-
 // functional declaration
 
 // arrow function
 
+const input1 = prompt('Enter first number');
+const input2 = prompt('Enter second number');
+
 // functional experssion
-const myFirstFunction = function () {
+const getSumOfTwo = function (num1, num2) {
   // тело функции
-  console.log(true);
+  const result = +num1 + +num2;
+
+  const sumMessage = num1 + ' + ' + num2 + ' = ' + result;
+
+  return result;
+
+  alert(1232423);
 };
 
-myFirstFunction();
+// getSumOfTwo(10, 50);
+// getSumOfTwo(-5, 15);
+const result = getSumOfTwo(input1, input2);
+
+alert(result);
