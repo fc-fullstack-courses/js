@@ -1,9 +1,7 @@
 const getSumOfTwo = function (num1, num2) {
   // debugger;
-  if (!isNaN(num1)) {
-    if (!isNaN(num2)) {
-      return num1 + num2;
-    }
+  if (!isNaN(num1) && !isNaN(num2)) {
+    return num1 + num2;
   }
 
   alert('vse ploxo');
@@ -34,4 +32,11 @@ switch (input) {
   default:
     alert('This fighter doesnt exist');
 }
+
+if (!asdbkhf && !mfklsafsa) {
+  
+}
 // input === 1
+// реализовать с помощью switch калькулятор
+// он должен уметь умножать делить 
+// складывать и вычитать 2 числа
