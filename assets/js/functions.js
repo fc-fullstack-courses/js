@@ -35,6 +35,15 @@ const getSumOfTwo = function (num1, num2) {
   return result;
 };
 
+const myFunc = function (num1, str2) {
+  const test1 = 1;
+  return test1;
+};
+
+myFunc(10, 'true');
+myFunc(-100, 'asfdshgfgfdsfd');
+myFunc(null, 500);
+
 // getSumOfTwo(10, 50);
 // getSumOfTwo(-5, 15);
 // const result = getSumOfTwo(input1, input2);
