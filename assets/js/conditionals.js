@@ -107,3 +107,39 @@ const calculate = function (num1, num2, operator) {
       return null;
   }
 };
+
+const expression = true;
+
+if (expression) {
+  console.log(1);
+} else {
+  console.log(2);
+}
+
+expression ? console.log(1) : console.log(2);
+
+// BAD PRACTICE
+// if (expression > 0) {
+//   console.log(1);
+// } else if (expression < 0) {
+//   console.log(2);
+// } else {
+//   console.log(3);
+// }
+
+// expression > 0
+//   ? console.log(1)
+//   : expression < 0
+//   ? console.log(2)
+//   : console.log(3);
+let userName = 'Test';
+let message;
+const isGreeting = false;
+
+if (isGreeting) {
+  message = 'Hello ' + userName;
+} else {
+  message = 'Bye ' + userName;
+}
+
+const message2 = isGreeting ? 'Hello ' + userName : 'Bye ' + userName;
