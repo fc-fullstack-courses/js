@@ -24,27 +24,68 @@
 //   console.log(1);
 // }
 
-let i = 0;
+// let i = 0;
 
-while (i < 20) {
-  console.log(i);
-  i++;
-}
+// while (i < 20) {
+//   console.log(i);
+//   i++;
+// }
 
-i = 0;
-while (true) {
-  console.log(i);
-  i++;
-  if (i >= 20) {
-    break;
+// i = 0;
+// while (true) {
+//   console.log(i);
+//   i++;
+//   if (i >= 20) {
+//     break;
+//   }
+// }
+
+// let shouldContinue = true;
+// i = 0;
+
+// while (shouldContinue) {
+//   console.log(i);
+//   i++;
+//   shouldContinue = confirm('Should continue ?');
+// }
+/*
+залогируйте в цикле четные числа от 0 до 20
+*/
+
+let counter = 0;
+
+// while (counter < 21) {
+//   if (counter % 2 === 0) {
+//     console.log(counter);
+//   }
+//   counter++;
+// }
+
+counter = 0;
+
+// while (counter < 21 && counter % 2 === 0) {
+//   console.log(counter);
+
+//   counter += 2;
+// }
+
+// while (true) {
+//   if (counter % 2 === 0) {
+//     console.log(counter);
+//   }
+
+//   counter += 2;
+//   if (counter > 20) {
+//     break;
+//   }
+// }
+
+while (counter < 21) {
+  // debugger;
+  counter++;
+  if(counter % 2 !== 0) {
+    continue; // при попадании на него прерывает текущую итерацию и начинают новую
   }
-}
-
-let shouldContinue = true;
-i = 0;
-
-while(shouldContinue) {
-  console.log(i);
-  i++;
-  shouldContinue = confirm('Should continue ?');
+  
+  console.log(counter);
 }
