@@ -73,7 +73,7 @@ const getSumOfTwo = function (num1, num2) {
 //     console.log('Unsupported operator');
 // }
 
-const calculate = function (num1, num2, operator) {
+const sum = function (num1, num2) {
   if (
     typeof num1 !== 'number' ||
     typeof num2 !== 'number' ||
@@ -81,11 +81,15 @@ const calculate = function (num1, num2, operator) {
   ) {
     return null;
   }
+  return num1 + num2;
+};
+// ... для остальных
 
+const calculate = function (num1, num2, operator) {
   switch (operator) {
     // expression === 1
     case '+':
-      return num1 + num2;
+      return sum(num1, num2);
 
     case '-':
       return num1 - num2;
