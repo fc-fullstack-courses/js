@@ -39,36 +39,76 @@ const getSumOfTwo = function (num1, num2) {
 // он должен уметь умножать делить
 // складывать и вычитать 2 числа
 
-let expression = 1;
+// let expression = 1;
 
-const num1 = -10;
-const num2 = 20;
-const operator = prompt('enter operator:');
-/*
-  +,-,*,/
-*/
-switch (operator) {
-  // expression === 1
-  case '+': {
-    console.log(num1 + num2);
-    break;
+// const num1 = -10;
+// const num2 = 20;
+// const operator = prompt('enter operator:');
+// /*
+//   +,-,*,/
+// */
+// switch (operator) {
+//   // expression === 1
+//   case '+': {
+//     console.log(num1 + num2);
+//     break;
+//   }
+//   case '-': {
+//     console.log(num1 - num2);
+//     break;
+//   }
+//   case '*': {
+//     console.log(num1 * num2);
+//     break;
+//   }
+//   case '/': {
+//     console.log(num1 / num2);
+//     break;
+//   }
+//   case '^': {
+//     console.log(num1 ** num2);
+//     break;
+//   }
+//   default:
+//     console.log('Unsupported operator');
+// }
+
+const calculate = function (num1, num2, operator) {
+  if (
+    typeof num1 !== 'number' ||
+    typeof num2 !== 'number' ||
+    isNaN(num1 - num2)
+  ) {
+    return null;
   }
-  case '-': {
-    console.log(num1 - num2);
-    break;
+  
+  let result;
+
+  switch (operator) {
+    // expression === 1
+    case '+': {
+      result = num1 + num2;
+      break;
+    }
+    case '-': {
+      result = num1 - num2;
+      break;
+    }
+    case '*': {
+      result = num1 * num2;
+      break;
+    }
+    case '/': {
+      result = num1 / num2;
+      break;
+    }
+    case '^': {
+      result = num1 ** num2;
+      break;
+    }
+    default:
+      result = null;
   }
-  case '*': {
-    console.log(num1 * num2);
-    break;
-  }
-  case '/': {
-    console.log(num1 / num2);
-    break;
-  }
-  case '^': {
-    console.log(num1 ** num2);
-    break;
-  }
-  default:
-    console.log('Unsupported operator');
-}
+
+  return result;
+};
