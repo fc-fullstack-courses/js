@@ -81,34 +81,25 @@ const calculate = function (num1, num2, operator) {
   ) {
     return null;
   }
-  
-  let result;
 
   switch (operator) {
     // expression === 1
-    case '+': {
-      result = num1 + num2;
-      break;
-    }
-    case '-': {
-      result = num1 - num2;
-      break;
-    }
-    case '*': {
-      result = num1 * num2;
-      break;
-    }
-    case '/': {
-      result = num1 / num2;
-      break;
-    }
-    case '^': {
-      result = num1 ** num2;
-      break;
-    }
-    default:
-      result = null;
-  }
+    case '+':
+      return num1 + num2;
 
-  return result;
+    case '-':
+      return num1 - num2;
+
+    case '*':
+      return num1 * num2;
+
+    case '/':
+      return num1 / num2;
+
+    case '^':
+      return num1 ** num2;
+
+    default:
+      return null;
+  }
 };
