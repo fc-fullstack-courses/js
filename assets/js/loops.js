@@ -80,12 +80,30 @@ counter = 0;
 //   }
 // }
 
-while (counter < 21) {
-  // debugger;
-  counter++;
-  if(counter % 2 !== 0) {
-    continue; // при попадании на него прерывает текущую итерацию и начинают новую
-  }
-  
-  console.log(counter);
+// while (counter < 21) {
+//   // debugger;
+//   counter++;
+//   if (counter % 2 !== 0) {
+//     continue; // при попадании на него прерывает текущую итерацию и начинают новую
+//   }
+
+//   console.log(counter);
+// }
+
+// =============================================
+
+do {
+  console.log('do while');
+} while (false);
+
+while (false) {
+  console.log('while');
 }
+
+counter = 1;
+
+do {
+  console.log(counter);
+
+  counter++;
+} while (counter < 21 && counter % 2 === 0);
