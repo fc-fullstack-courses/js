@@ -117,7 +117,7 @@ if (expression) {
 }
 
 expression ? console.log(1) : console.log(2);
-
+/*
 // BAD PRACTICE
 // if (expression > 0) {
 //   console.log(1);
@@ -132,14 +132,24 @@ expression ? console.log(1) : console.log(2);
 //   : expression < 0
 //   ? console.log(2)
 //   : console.log(3);
+*/
 let userName = 'Test';
 let message;
-const isGreeting = false;
+// const isGreeting = confirm();
 
-if (isGreeting) {
-  message = 'Hello ' + userName;
-} else {
-  message = 'Bye ' + userName;
-}
+// if (isGreeting) {
+//   message = 'Hello ' + userName;
+// } else {
+//   message = 'Bye ' + userName;
+// }
 
-const message2 = isGreeting ? 'Hello ' + userName : 'Bye ' + userName;
+// const message2 = isGreeting ? 'Hello ' + userName : 'Bye ' + userName;
+
+/*
+  есть переменная verdict
+  если verdict = true то вывести алертом сообщение "Hello world"
+  если verdict = false то вывести консоль логом NaN
+*/
+
+const verdict = false;
+verdict ? alert("Hello world") : console.log(NaN)
