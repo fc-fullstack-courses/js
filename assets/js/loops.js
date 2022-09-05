@@ -120,15 +120,30 @@ for (variables creation; expression ; post iteration action ) {
 }
 */
 
-for (let i = 0; i < 10 ; i++ ) {
+for (let i = 0; i < 10; i++) {
   console.log('for loop');
   console.log(i);
 
   i++;
-
 }
 
-// написать функцию, принимающую 2 числа и 
+// написать функцию, принимающую 2 числа и
 // возводящую первое число в степень второго
 // не пользоваться оператором ** или Math.pow()
 // предположите что степень положительная
+
+const toPower = function (number, exp) {
+  let result = 1;
+  
+  for (let i = 0; i < exp; i++) {
+    result = result * number;
+  }
+  // let result = result;
+  // for (let i = 1; i < exp; i++) {
+  //   result = result * number;
+  // }
+
+  return result;
+};
+
+
