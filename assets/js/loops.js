@@ -146,4 +146,9 @@ const toPower = function (number, exp) {
   return result;
 };
 
-
+// for (let i = 0; i < 3; i++) {
+//   debugger;
+//   for (let j = 0; j < 3; j++) {
+//     console.log(i , j)
+//   }
+// }
