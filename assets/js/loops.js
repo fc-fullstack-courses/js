@@ -92,18 +92,43 @@ counter = 0;
 
 // =============================================
 
-do {
-  console.log('do while');
-} while (false);
+// do {
+//   console.log('do while');
+// } while (false);
 
-while (false) {
-  console.log('while');
+// let expression = true;
+// let j = 0;
+// while (expression) {
+//   console.log('while');
+//   j++;
+//   if (j === 2 || j === 5) {
+//     continue;
+//   }
+//   // if() {
+//   //   break;
+//   // }
+//   const input = +prompt('Enter ' + j);
+
+//   if (input === j) {
+//     expression = false;
+//   }
+// }
+
+/*
+for (variables creation; expression ; post iteration action ) {
+  
+}
+*/
+
+for (let i = 0; i < 10 ; i++ ) {
+  console.log('for loop');
+  console.log(i);
+
+  i++;
+
 }
 
-counter = 1;
-
-do {
-  console.log(counter);
-
-  counter++;
-} while (counter < 21 && counter % 2 === 0);
+// написать функцию, принимающую 2 числа и 
+// возводящую первое число в степень второго
+// не пользоваться оператором ** или Math.pow()
+// предположите что степень положительная
