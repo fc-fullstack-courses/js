@@ -7,18 +7,18 @@
 // };
 
 const phone = {
-  color: 'blue',
-  model: 'Moto G Plus',
+  color: "blue",
+  model: "Moto G Plus",
   switchOn: function () {
     // method
-    alert('Switched On');
+    alert("Switched On");
   },
   cpu: {
-    model: 'Qualcom Snapdragon 730',
+    model: "Qualcom Snapdragon 730",
     frequency: 4,
-    frequencyUnit: 'GHz',
+    frequencyUnit: "GHz",
   },
-  test: 'test',
+  test: "test",
 };
 // CRUD
 // CREATE
@@ -34,7 +34,7 @@ console.log(phone.cpu);
 console.log(phone.cpu.frequency);
 console.log(phone.ljnhgifdhtgreiufhdifhdguyfdgd); // undefined
 // UPDATE property
-phone.color = 'black';
+phone.color = "black";
 // Add property after creation
 // let battery = 4000;
 phone.battery = 4000;
@@ -55,22 +55,22 @@ const obj = {
 };
 
 const message = {
-  author: 'Ivan Vlasov',
-  text: 'методы?',
-  date: '17:54', // data курильщика
+  author: "Ivan Vlasov",
+  text: "методы?",
+  date: "17:54", // data курильщика
   // date: new Date(2022,09,06,17,54)
   test: {
     value: {
       data: 12345,
     },
   },
-  kfbkdsdksj: 'sdsafda',
+  kfbkdsdksj: "sdsafda",
 };
 
 const message2 = {
-  author: 'Ирина Мазур',
-  text: 'фунуция',
-  date: '17:52', // data курильщика
+  author: "Ирина Мазур",
+  text: "фунуция",
+  date: "17:52", // data курильщика
   // date: new Date(2022,09,06,17,52)
 };
 
@@ -122,13 +122,41 @@ const User = function (firstName, lastName, age, email) {
   this.email = email;
 
   this.brushTeeth = function () {
-    console.log('Burshing teeth ...');
+    console.log("Burshing teeth ...");
   };
 
   return false; // в режиме конструктора игнорируется
 };
 // const CompanyName = function () {}
-const user1 = new User('Test', 'Testenko', 42, 'test@test.test');
+const user1 = new User("Test", "Testenko", 42, "test@test.test");
 const user2 = new User();
-const user4 = new User('Anton', 'Antonovich', 12, 'test1@test.test'); // правильно
+const user4 = new User("Anton", "Antonovich", 12, "test1@test.test"); // правильно
 // const user5 = User('Anton', 'Antonovich', 12); // неправильный вызов
+
+/*
+  нужно получить 2 числа от пользователя
+  сложим их
+  и покажем пользователю результат в формате следущей строки
+  number1 + number2 = sum
+*/
+
+const number1 = +prompt("first number");
+const number2 = +prompt("second number");
+
+// const sum = number1 + number2;
+
+if (isNaN(number1 - number2)) {
+  alert("bad input");
+} else {
+  // alert(number1 + ' + ' + number2 + ' = ' + sum);
+  alert(`${number1} + ${number2} = ${number1 + number2}`);
+}
+
+// alert("Рец'епт:\nмука-10ст. ло\"жек\nсахар - много");
+
+const str = ``; // шаблонная строка
+
+// alert(`Рец'епт:
+//                            мука-10ст. ло"жек
+//           сахар - мн
+// ого`);
