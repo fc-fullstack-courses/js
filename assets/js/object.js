@@ -142,15 +142,32 @@ const user4 = new User("Anton", "Antonovich", 12, "test1@test.test"); // пра�
 
 const number1 = +prompt("first number");
 const number2 = +prompt("second number");
-
-// const sum = number1 + number2;
-
 if (isNaN(number1 - number2)) {
   alert("bad input");
 } else {
-  // alert(number1 + ' + ' + number2 + ' = ' + sum);
-  alert(`${number1} + ${number2} = ${number1 + number2}`);
+  const sum = +prompt(`${number1} + ${number2} = ?`);
+  if (isNaN(sum)) {
+    alert("bad input");
+  } else {
+    // if(number1 + number2 === sum) {
+    //   alert(`${number1} + ${number2} === ${sum}`);
+    // } else {
+    //   alert(`${number1} + ${number2} !== ${sum}`);
+    // }
+    // const equalitySignResult = number1 + number2 === sum ? "===" : "!==";
+    // alert(`${number1} + ${number2} ${equalitySignResult} ${sum}`);
+    alert(`${number1} + ${number2} ${number1 + number2 === sum ? "===" : "!=="} ${sum}`);
+  }
 }
+
+// const sum = number1 + number2;
+
+// if (isNaN(number1 - number2)) {
+//   alert("bad input");
+// } else {
+//   // alert(number1 + ' + ' + number2 + ' = ' + sum);
+//   alert(`${number1} + ${number2} = ${number1 + number2}`);
+// }
 
 // alert("Рец'епт:\nмука-10ст. ло\"жек\nсахар - много");
 
