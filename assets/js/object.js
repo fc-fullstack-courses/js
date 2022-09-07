@@ -6,38 +6,38 @@
 //   1: 4551,
 // };
 
-const phone = {
-  color: "blue",
-  model: "Moto G Plus",
-  switchOn: function () {
-    // method
-    alert("Switched On");
-  },
-  cpu: {
-    model: "Qualcom Snapdragon 730",
-    frequency: 4,
-    frequencyUnit: "GHz",
-  },
-  test: "test",
-};
-// CRUD
-// CREATE
-const obj1 = {}; // literal, BEST
-const obj2 = Object(); // BAD
-const obj3 = new Object(); // BAD
-// READ
-console.log(phone);
-// alert(phone);
-// READ object values
-console.log(phone.color);
-console.log(phone.cpu);
-console.log(phone.cpu.frequency);
-console.log(phone.ljnhgifdhtgreiufhdifhdguyfdgd); // undefined
-// UPDATE property
-phone.color = "black";
-// Add property after creation
-// let battery = 4000;
-phone.battery = 4000;
+// const phone = {
+//   color: "blue",
+//   model: "Moto G Plus",
+//   switchOn: function () {
+//     // method
+//     alert("Switched On");
+//   },
+//   cpu: {
+//     model: "Qualcom Snapdragon 730",
+//     frequency: 4,
+//     frequencyUnit: "GHz",
+//   },
+//   test: "test",
+// };
+// // CRUD
+// // CREATE
+// const obj1 = {}; // literal, BEST
+// const obj2 = Object(); // BAD
+// const obj3 = new Object(); // BAD
+// // READ
+// console.log(phone);
+// // alert(phone);
+// // READ object values
+// console.log(phone.color);
+// console.log(phone.cpu);
+// console.log(phone.cpu.frequency);
+// console.log(phone.ljnhgifdhtgreiufhdifhdguyfdgd); // undefined
+// // UPDATE property
+// phone.color = "black";
+// // Add property after creation
+// // let battery = 4000;
+// phone.battery = 4000;
 // phone.battery = {
 //   amount: 4000,
 //   unit: 'mAh',
@@ -74,9 +74,9 @@ const message2 = {
   // date: new Date(2022,09,06,17,52)
 };
 
-console.log(message.author);
-console.log(message);
-console.log(message.test.value.data);
+// console.log(message.author);
+// console.log(message);
+// console.log(message.test.value.data);
 
 /*
   создать 2 -3 обьекта пользователей
@@ -114,23 +114,25 @@ console.log(message.test.value.data);
 // };
 
 // функция - конструктор
-const User = function (firstName, lastName, age, email) {
-  // debugger;
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.age = age;
-  this.email = email;
+// PascalCase
+// const User = function (firstName, lastName, age, email) {
+//   // debugger;
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.age = age;
+//   this.email = email;
 
-  this.brushTeeth = function () {
-    console.log("Burshing teeth ...");
-  };
+//   this.brushTeeth = function () {
+//     return "Burshing teeth ...";
+//   };
 
-  return false; // в режиме конструктора игнорируется
-};
+//   return false; // в режиме конструктора игнорируется
+// };
+
 // const CompanyName = function () {}
-const user1 = new User("Test", "Testenko", 42, "test@test.test");
-const user2 = new User();
-const user4 = new User("Anton", "Antonovich", 12, "test1@test.test"); // правильно
+// const user1 = new User("Test", "Testenko", 42, "test@test.test");
+// const user2 = new User();
+// const user4 = new User("Anton", "Antonovich", 12, "test1@test.test"); // правильно
 // const user5 = User('Anton', 'Antonovich', 12); // неправильный вызов
 
 /*
@@ -140,25 +142,25 @@ const user4 = new User("Anton", "Antonovich", 12, "test1@test.test"); // пра�
   number1 + number2 = sum
 */
 
-const number1 = +prompt("first number");
-const number2 = +prompt("second number");
-if (isNaN(number1 - number2)) {
-  alert("bad input");
-} else {
-  const sum = +prompt(`${number1} + ${number2} = ?`);
-  if (isNaN(sum)) {
-    alert("bad input");
-  } else {
-    // if(number1 + number2 === sum) {
-    //   alert(`${number1} + ${number2} === ${sum}`);
-    // } else {
-    //   alert(`${number1} + ${number2} !== ${sum}`);
-    // }
-    // const equalitySignResult = number1 + number2 === sum ? "===" : "!==";
-    // alert(`${number1} + ${number2} ${equalitySignResult} ${sum}`);
-    alert(`${number1} + ${number2} ${number1 + number2 === sum ? "===" : "!=="} ${sum}`);
-  }
-}
+// const number1 = +prompt("first number");
+// const number2 = +prompt("second number");
+// if (isNaN(number1 - number2)) {
+//   alert("bad input");
+// } else {
+//   const sum = +prompt(`${number1} + ${number2} = ?`);
+//   if (isNaN(sum)) {
+//     alert("bad input");
+//   } else {
+//     // if(number1 + number2 === sum) {
+//     //   alert(`${number1} + ${number2} === ${sum}`);
+//     // } else {
+//     //   alert(`${number1} + ${number2} !== ${sum}`);
+//     // }
+//     // const equalitySignResult = number1 + number2 === sum ? "===" : "!==";
+//     // alert(`${number1} + ${number2} ${equalitySignResult} ${sum}`);
+//     alert(`${number1} + ${number2} ${number1 + number2 === sum ? "===" : "!=="} ${sum}`);
+//   }
+// }
 
 // const sum = number1 + number2;
 
@@ -177,3 +179,37 @@ const str = ``; // шаблонная строка
 //                            мука-10ст. ло"жек
 //           сахар - мн
 // ого`);
+
+const test1 = "Anton";
+const test2 = "Anton";
+
+console.log(test1 === test2); // сравнение по значению (для примитивов)
+
+const obj1 = {
+  name: "Anton",
+  age: 20,
+};
+
+const obj2 = {
+  name: "Anton",
+  age: 20,
+};
+
+console.log(obj1 === obj2); // сравнение по сслыке (месту в памяти)
+
+const obj3 = obj1;
+
+console.log(obj1 === obj3);
+
+obj3.age = 100;
+
+const changeStuff = function (object, value) {
+  const newObj = object;
+
+  newObj.test = value;
+
+  return newObj;
+};
+
+const testObj = { name: "test" };
+const changedObj = changeStuff(testObj, 12345);
