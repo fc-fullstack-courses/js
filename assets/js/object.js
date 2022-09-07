@@ -129,9 +129,20 @@ const message2 = {
 //   return false; // в режиме конструктора игнорируется
 // };
 
+// function createUser() {
+//   const firstName = prompt();
+//   // const firstName = prompt();
+//   // const firstName = prompt();
+//   // const firstName = prompt();
+
+//   const newUser = new User(firstName);
+
+//   return newUser;
+// }
+
 // const CompanyName = function () {}
 // const user1 = new User("Test", "Testenko", 42, "test@test.test");
-// const user2 = new User();
+// const user2 = createUser();
 // const user4 = new User("Anton", "Antonovich", 12, "test1@test.test"); // правильно
 // const user5 = User('Anton', 'Antonovich', 12); // неправильный вызов
 
@@ -249,15 +260,16 @@ console.log(user100[20 / 2]);
 
 // создайте обьект юзера  с 2-3 свойствами по выбору
 // промптом спросите ключ свойства, которое надо показать
-// затем заалерте следующее сообщение 
+// затем заалерте следующее сообщение
 // Запрашиваемое свойство = значениеСвойства
 
-const admin = {
-  name: "Admin",
-  age: 12354,
-  password: 'asdsafdffsagrhr235423'
-}
+// const admin = {
+//   id: 1233545423,
+//   name: "Admin",
+//   age: 12354,
+//   password: "asdsafdffsagrhr235423",
+// };
 
-const key = prompt('Введите искомый ключ');
+// const key = prompt("Введите искомый ключ");
 
-alert(`Значение введенного ключа ${admin[key]}`)
+// alert(`Значение введенного ключа ${admin[key]}`);
