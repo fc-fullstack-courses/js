@@ -213,3 +213,36 @@ const changeStuff = function (object, value) {
 
 const testObj = { name: "test" };
 const changedObj = changeStuff(testObj, 12345);
+
+// const obj12 = new Object({test:1234});
+// const obj23 = {test:1234}; // syntax sugar
+
+const user100 = {
+  testTest: 123,
+  10: 345,
+  "first name": "Anton",
+};
+
+// console.log(user100["testTest"]);
+
+// console.log(user100.testTest);
+// console.log(user100["first name"]);
+
+// console.log(user100['10']);
+console.log(user100[20 / 2]);
+
+const key = "first name";
+
+key;
+
+console.log(user100[key]);
+
+const user101 = {
+  testTest: 123,
+  10: 345,
+  [key]: 'Anton',
+  // key : "first name"
+  // key : key
+  key
+};
+user101[key] = 50;
