@@ -231,18 +231,33 @@ const user100 = {
 // console.log(user100['10']);
 console.log(user100[20 / 2]);
 
-const key = "first name";
+// const key = "first name";
 
-key;
+// key;
 
-console.log(user100[key]);
+// console.log(user100[key]);
 
-const user101 = {
-  testTest: 123,
-  10: 345,
-  [key]: 'Anton',
-  // key : "first name"
-  // key : key
-  key
-};
-user101[key] = 50;
+// const user101 = {
+//   testTest: 123,
+//   10: 345,
+//   [key]: 'Anton',
+//   // key : "first name"
+//   // key : key
+//   key
+// };
+// user101[key] = 50;
+
+// создайте обьект юзера  с 2-3 свойствами по выбору
+// промптом спросите ключ свойства, которое надо показать
+// затем заалерте следующее сообщение 
+// Запрашиваемое свойство = значениеСвойства
+
+const admin = {
+  name: "Admin",
+  age: 12354,
+  password: 'asdsafdffsagrhr235423'
+}
+
+const key = prompt('Введите искомый ключ');
+
+alert(`Значение введенного ключа ${admin[key]}`)
