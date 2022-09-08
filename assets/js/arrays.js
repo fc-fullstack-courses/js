@@ -57,8 +57,47 @@ const deletedFromStart = userNames.shift();
   удалите самую первуюб машину и сохраните её в переменную
 */
 const cars = ["car1", "car2"];
-cars.push("car3", "car4", "car5");
+const newArrlength = cars.push("car3", "car4", "car5");
 const lastCar = cars.pop();
 cars.unshift("1car");
 cars.unshift("2car");
 const firstCar = cars.shift();
+
+const myCar = "Best car ever";
+cars.push(myCar);
+
+// удаляет все єлементы начиная с указанного элемента и сохраняет их в новый массив
+// userNames.splice(3);
+// удаляет 1 єлемент начиная с 3 элемента и сохраняет их в новый массив
+// const result = userNames.splice(3,1);
+
+// удаляет 2 єлементa начиная с 3 элемента и сохраняет их в новый массив
+// затем вставляет на их место 4 новых строки
+// const result = userNames.splice(
+//   3,
+//   2,
+//   "INSERTED1",
+//   "INSERTED2",
+//   "INSERTED3",
+//   "INSERTED4",
+//   [1, 2, 3]
+// );
+
+// const result = userNames.splice(
+//   -3,
+//   2,
+//   "INSERTED1",
+//   "INSERTED2",
+//   "INSERTED3",
+//   "INSERTED4",
+//   [1, 2, 3]
+// );
+
+
+const arr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+console.log(arr[1][2]);
+
