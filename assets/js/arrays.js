@@ -56,3 +56,9 @@ const deletedFromStart = userNames.shift();
   положите в начало массива еще 1 машину 
   удалите самую первуюб машину и сохраните её в переменную
 */
+const cars = ["car1", "car2"];
+cars.push("car3", "car4", "car5");
+const lastCar = cars.pop();
+cars.unshift("1car");
+cars.unshift("2car");
+const firstCar = cars.shift();
