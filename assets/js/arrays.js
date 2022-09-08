@@ -93,7 +93,6 @@ cars.push(myCar);
 //   [1, 2, 3]
 // );
 
-
 const arr = [
   [1, 2, 3],
   [4, 5, 6],
@@ -101,3 +100,11 @@ const arr = [
 ];
 console.log(arr[1][2]);
 
+userNames.push([1, 2, 3]);
+
+// создаем полную поверхностную копию массива
+const copy = userNames.slice();
+
+// скопировать все єлементі начная с третьего 
+// и до пятого Не включая его
+const copy1 = userNames.slice(3,5);
