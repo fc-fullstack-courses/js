@@ -143,7 +143,22 @@ const strFromArr = userNames.join(); // ','
 const strFromArr2 = userNames.join('-'); //-
 
 const numbers = [5, 89, 4, 42, 13, 48, 7];
-const sorted = numbers.sort();
+
+const sortFunc = function (currentValue, nextValue) {
+  if (currentValue < nextValue) {
+    return -1; // currentValue занимает меньшие индексы (сортировка по возрастанию )
+  }
+
+  // return 0 - currentValue и nextValue не меняют позицию
+
+  // return 1 - currentVnextValuealue занимает меньшие индексы (сортировка по убыванию )
+
+  // return currentValue - nextValue; для чисел
+};
+// сортирует массив, мутируя его
+// может принимать сортирующую функцию, для настройки  сортировки
+// const sorted = numbers.sort();
+const sorted = numbers.sort(sortFunc);
 
 // HOF - функция высшего порядка
 // функция принимающая на вход другую функкцию
