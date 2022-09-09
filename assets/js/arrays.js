@@ -94,11 +94,15 @@ cars.push(myCar);
 // );
 
 const arr = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
+  [1, [2, [3]]],
+  [[4, [5]], 6],
+  [7, [[8], 9]],
+  'test',
+  {
+    name: 'test',
+  },
 ];
-console.log(arr[1][2]);
+// console.log(arr[1][2]);
 
 userNames.push([1, 2, 3]);
 
@@ -141,3 +145,28 @@ const strFromArr2 = userNames.join('-'); //-
 const numbers = [5, 89, 4, 42, 13, 48, 7];
 const sorted = numbers.sort();
 
+// HOF - функция высшего порядка
+// функция принимающая на вход другую функкцию
+// или возвращает после работы другую функцию
+
+// v1
+// const highOrderFunction1 = function (func) {
+//   const secret = 'SECRET DATA';
+//   func(secret);
+
+//   // return function() {
+
+//   // }
+// };
+
+// highOrderFunction1(alert);
+
+// v2
+// const highOrderFunction2 = function () {
+//   console.log(5);
+//   return function () {
+//     console.log('inner');
+//   };
+// };
+// const innerFunc = highOrderFunction2();
+// innerFunc();
