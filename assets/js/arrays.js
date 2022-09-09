@@ -31,20 +31,20 @@ test5@tes.test
 // // arr.test = 'test'; // плохо
 // arr[arr.length] = 1000;
 
-const userNames = ["Test", "Null", "Anton", "Pavlo", "Olena"];
+const userNames = ['Test', 'Null', 'Anton', 'Pavlo', 'Olena'];
 
 // ложит вищи в конец массива
-userNames.push("Anton");
-userNames.push("Kyrylo");
-let newArrLength = userNames.push("Mefodiy", "Ivan", "Nastya");
+userNames.push('Anton');
+userNames.push('Kyrylo');
+let newArrLength = userNames.push('Mefodiy', 'Ivan', 'Nastya');
 
 // удаляет последний єлемент из массива и сохраняет его
 const deletedFromEnd = userNames.pop();
 // userNames.pop();
 
 // ложит вищи в начало массива
-userNames.unshift("Felix");
-newArrLength = userNames.unshift("John", "Jane");
+userNames.unshift('Felix');
+newArrLength = userNames.unshift('John', 'Jane');
 
 // удаляет первый єлемент из массива и сохраняет его
 const deletedFromStart = userNames.shift();
@@ -56,14 +56,14 @@ const deletedFromStart = userNames.shift();
   положите в начало массива еще 1 машину 
   удалите самую первуюб машину и сохраните её в переменную
 */
-const cars = ["car1", "car2"];
-const newArrlength = cars.push("car3", "car4", "car5");
+const cars = ['car1', 'car2'];
+const newArrlength = cars.push('car3', 'car4', 'car5');
 const lastCar = cars.pop();
-cars.unshift("1car");
-cars.unshift("2car");
+cars.unshift('1car');
+cars.unshift('2car');
 const firstCar = cars.shift();
 
-const myCar = "Best car ever";
+const myCar = 'Best car ever';
 cars.push(myCar);
 
 // удаляет все єлементы начиная с указанного элемента и сохраняет их в новый массив
@@ -110,12 +110,12 @@ const copy = userNames.slice();
 const copy1 = userNames.slice(3, 5);
 
 // говорит, есть ли в массиве значение, плохо работает с обьектами
-const result = userNames.includes("Anton");
+const result = userNames.includes('Anton');
 // ищет и возвращает первый попавшийся индекс искомого значения
 // если не нашел то возвращает -1
-const antonIndex = userNames.indexOf("Anton", 5);
+const antonIndex = userNames.indexOf('Anton', 5);
 
-// создает массив на осонвании другого массива, 
+// создает массив на осонвании другого массива,
 // и приклеивает ему в конец значения
 // если приклеиваем массиві, то они разбираются
 // и приклеиваются их составляющие
