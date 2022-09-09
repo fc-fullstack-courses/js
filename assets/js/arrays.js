@@ -121,3 +121,23 @@ const antonIndex = userNames.indexOf('Anton', 5);
 // и приклеиваются их составляющие
 const bonusArray = [[1], [2], [3], [4]];
 const concatedArr = userNames.concat(undefined, 1, bonusArray);
+
+// переворачивает массив, мутируя его
+const newUserNames = userNames.reverse();
+
+// создает новый массив, в котором вложенные подмассивы
+// убираются до определенной глубины
+// немутирующий
+const flattendArr = arr.flat(); // на 1 уровень
+// const flattendArr = arr.flat(10) // на 10 уровней
+// const flattendArr = arr.flat(Infinity) // все убрать
+
+// создает сторку на основании массива, которые разделяются разделителем
+// который может указываеться польователем (по умолчанию запятая)
+// немутирующий
+const strFromArr = userNames.join(); // ','
+const strFromArr2 = userNames.join('-'); //-
+
+const numbers = [5, 89, 4, 42, 13, 48, 7];
+const sorted = numbers.sort();
+
