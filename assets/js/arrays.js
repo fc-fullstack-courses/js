@@ -218,3 +218,11 @@ const onlyUserNames = userNames.filter(function (elem, index, arr) {
 
   return typeof elem === 'string';
 });
+
+const foundValue = newNumbers.find(function (elem, index, arr) {
+  return elem.value < 50 && elem.value > 20;
+});
+
+const foundIndex = newNumbers.findIndex(function (elem, index, arr) {
+  return elem.value < 50 && elem.value > 20;
+});
