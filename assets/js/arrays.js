@@ -187,10 +187,10 @@ const sorted = numbers.sort(sortFunc);
 // innerFunc();
 
 const callback = function (currentElem, index, arr) {
-  console.log('value: ', currentElem);
-  console.log(`index:  ${index}`);
-  console.log(`array:`);
-  console.log(arr);
+  // console.log('value: ', currentElem);
+  // console.log(`index:  ${index}`);
+  // console.log(`array:`);
+  // console.log(arr);
 };
 
 userNames.forEach(callback);
@@ -198,11 +198,23 @@ userNames.forEach(callback);
 const newNumbers = numbers.map(function (currentElem, index, arr) {
   const obj = {
     value: currentElem,
-    id: index
-  }
+    id: index,
+  };
 
-  if(obj.value < 10) {
+  if (obj.value < 10) {
     obj.value = 200;
   }
   return obj;
+});
+
+const onlyUserNames = userNames.filter(function (elem, index, arr) {
+  // console.log(elem);
+  // console.log(typeof elem === 'string');
+
+  // if (typeof elem === 'string') {
+  //   return true;
+  // }
+  // return false;
+
+  return typeof elem === 'string';
 });
