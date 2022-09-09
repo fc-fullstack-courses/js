@@ -226,3 +226,11 @@ const foundValue = newNumbers.find(function (elem, index, arr) {
 const foundIndex = newNumbers.findIndex(function (elem, index, arr) {
   return elem.value < 50 && elem.value > 20;
 });
+
+const isThereAntons = newUserNames.some(function (elem) {
+  return elem === 'Anton';
+});
+
+const isEverybodyAntons = newUserNames.every(function (elem) {
+  return elem === 'Anton';
+});
