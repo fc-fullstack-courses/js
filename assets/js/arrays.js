@@ -216,5 +216,5 @@ const onlyUserNames = userNames.filter(function (elem, index, arr) {
   // }
   // return false;
 
-  return typeof elem === 'string';
+  return  elem !== 'string';
 });
