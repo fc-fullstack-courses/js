@@ -185,3 +185,12 @@ const sorted = numbers.sort(sortFunc);
 // };
 // const innerFunc = highOrderFunction2();
 // innerFunc();
+
+const callback = function (currentElem, index, arr) {
+  console.log('value: ', currentElem);
+  console.log(`index:  ${index}`);
+  console.log(`array:`);
+  console.log(arr);
+};
+
+userNames.forEach(callback);
