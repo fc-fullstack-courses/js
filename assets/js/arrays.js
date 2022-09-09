@@ -194,3 +194,15 @@ const callback = function (currentElem, index, arr) {
 };
 
 userNames.forEach(callback);
+
+const newNumbers = numbers.map(function (currentElem, index, arr) {
+  const obj = {
+    value: currentElem,
+    id: index
+  }
+
+  if(obj.value < 10) {
+    obj.value = 200;
+  }
+  return obj;
+});
