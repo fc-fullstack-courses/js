@@ -234,3 +234,20 @@ const isThereAntons = newUserNames.some(function (elem) {
 const isEverybodyAntons = newUserNames.every(function (elem) {
   return elem === 'Anton';
 });
+
+const otherArr = [{ data: 1 }, { data: 2 }, { data: 3 }];
+
+const newArr2 = otherArr.map(function (elem, i) {
+  // elem.telephoneNumber = 158498484586 + i;
+
+  // const newObject = {
+  //   data: elem.data,
+  //   telephoneNumber: 158498484586 + i,
+  // };
+
+  const newObject = structuredClone(elem);
+
+  newObject.telephoneNumber = 158498484586 + i;
+
+  return newObject;
+});
