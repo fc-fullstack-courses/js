@@ -1,3 +1,4 @@
+'use strict';
 // const data = console.log(123453523); // всегда undefined
 
 // const name = prompt('Enter your name:'); // string
@@ -19,8 +20,6 @@
 // alert(sumMessage);
 
 // alert(num1 + ' + ' + num2 + ' = ' + (+num1 + Number(num2)));
-
-// functional declaration
 
 // // arrow function
 
@@ -61,11 +60,15 @@ myFunc(null, 500);
 
 // Реализовать функцию которая принимает имя пользователя
 // и будет с ним здороватся
-const createGreeting = function (username) {
-  const message = 'Hello ' + username;
-  return message;
-};
+// const createGreeting = function (username) {
+//   const message = 'Hello ' + username;
+//   return message;
+// };
 
-const greetMeMessage = createGreeting('Kyrylo');
+// const greetMeMessage = createGreeting('Kyrylo');
 
-alert(createGreeting('Kyrylo'));
+// alert(createGreeting('Kyrylo'));
+
+// console.log(test1234);
+
+// const test1234 = true;
