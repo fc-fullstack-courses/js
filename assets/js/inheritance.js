@@ -1,10 +1,7 @@
 'use strict';
-function Phone(model) {
+function Phone(model, manufacturer) {
   this.model = model;
-
-  this.call = function () {
-    console.log(1);
-  };
+  this.manufacturer = manufacturer;
 }
 
 const phoneProto = {
@@ -22,22 +19,24 @@ const deviceProto = {
 
 phoneProto.__proto__ = deviceProto;
 
-const phone1 = {
-  model: 'Pro',
-  manufacturer: 'Apple',
-  __proto__: phoneProto,
-};
+Phone.prototype = phoneProto;
 
-const phone2 = {
-  model: 'Basic',
-  manufacturer: 'Google',
-};
+// const phone1 = {
+//   model: 'Pro',
+//   manufacturer: 'Apple',
+//   __proto__: phoneProto,
+// };
+
+// const phone2 = {
+//   model: 'Basic',
+//   manufacturer: 'Google',
+// };
 
 // phone1.__proto__ = phoneProto;
-phone2.__proto__ = phoneProto;
+// phone2.__proto__ = phoneProto;
 
-// const phone1 = new Phone('Pro');
-// const phone2 = new Phone('Basic');
+const phone1 = new Phone('Pro', 'Apple');
+const phone2 = new Phone('Basic', 'Google');
 
 const arr1 = [1];
 const arr2 = [1];
