@@ -26,6 +26,7 @@
 
 // const input1 = prompt('Enter first number');
 // const input2 = prompt('Enter second number');
+// console.log(getSumOfTwo2(5, 5));
 
 // functional experssion
 const getSumOfTwo = function (num1, num2) {
@@ -34,6 +35,14 @@ const getSumOfTwo = function (num1, num2) {
 
   return result;
 };
+
+// functional declaration
+function getSumOfTwo2(num1, num2) {
+  // тело функции
+  const result = +num1 + +num2;
+}
+
+const test12345 = new getSumOfTwo2();
 
 const myFunc = function (num1, str2) {
   const test1 = 1;
