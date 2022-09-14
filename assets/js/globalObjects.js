@@ -71,3 +71,7 @@ console.log(toJadenCase(firstStr));
 
 // ==================== Boolean ===============================
 const boolResult = Boolean(firstStr); // приведение к булевому значению ===  !!
+
+// ==================== Number ===============================
+
+const number = Number('12356'); // приведение к числу ===  +value
