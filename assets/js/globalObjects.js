@@ -68,3 +68,6 @@ function toJadenCase(str) {
 
 const firstStr = 'test string aest test new yes';
 console.log(toJadenCase(firstStr));
+
+// ==================== Boolean ===============================
+const boolResult = Boolean(firstStr); // приведение к булевому значению ===  !!
