@@ -50,7 +50,7 @@ const myFunc = function (num1, str2) {
 
 // детерминированные функции - при одинаковых входных данных
 // одинаковые реузльтаты
-function sum(num1, num2) {
+function sum(num1 = 2, num2 = 3) {
   return num1 + num2;
 }
 
@@ -59,9 +59,19 @@ function sum(num1, num2) {
 // реагировать на исключительные ситуации, вызывать их обработчики.
 let test = 1;
 
-function sum2(num1, num2) {
+function sum2(num1 = 2, num2 = 3) {
   test++;
   return num1 + num2 + Math.random();
 }
 let test2;
 test2 = sum(2, 2);
+
+function User(name = 'User', age = 5000, isLoggedIn = false) {
+  this.name = name;
+  this.age = age;
+  this.isLoggedIn = isLoggedIn;
+}
+
+const user1 = new User('Test', 40);
+const user2 = new User('Test', 40, 'gadost');
+const user3 = new User();
