@@ -21,11 +21,64 @@
 
 // alert(num1 + ' + ' + num2 + ' = ' + (+num1 + Number(num2)));
 
-// // arrow function
+// arrow function
+const arrowSum = (num1, num2) => num1 + num2;
 
-// const input1 = prompt('Enter first number');
-// const input2 = prompt('Enter second number');
-// console.log(getSumOfTwo2(5, 5));
+function square(n) {
+  return n * n;
+}
+
+const squareArr = (n) => n * n;
+
+const testStr = () => 'test';
+
+const testFunc = () => this;
+
+const newspaper = {
+  name: 'Теленеделя',
+  articles: [
+    { name: 'article 1', text: 'asdkjdfdsjfndskjfdsnfdskj', author: 'Anton' },
+    { name: 'article 2', text: 'asd', author: 'Ivan' },
+    { name: 'article 3', text: 'safd', author: 'Nastya' },
+    { name: 'article 4', text: 'dsffdgfd', author: 'Anton' },
+  ],
+  showArticles: function () {
+    this.articles.forEach(function (artricle) {
+      debugger;
+      console.log(
+        `Newspaper ${this.name} Article: ${artricle.name} Author: ${artricle.author} text: ${artricle.text}`
+      );
+    });
+  },
+  showArticles1: function () {
+    const that = this;
+    this.articles.forEach(function (artricle) {
+      // debugger;
+      console.log(
+        `Newspaper ${that.name} Article: ${artricle.name} Author: ${artricle.author} text: ${artricle.text}`
+      );
+    });
+  },
+  showArticles2: function () {
+    const callback = function (artricle) {
+      // debugger;
+      console.log(
+        `Newspaper ${this.name} Article: ${artricle.name} Author: ${artricle.author} text: ${artricle.text}`
+      );
+    };
+
+    // const newCallback = callback.bind(this);
+
+    this.articles.forEach(callback.bind(this));
+  },
+  betterShowArticles: function () {
+    this.articles.forEach( (artricle) => {
+      console.log(
+        `Newspaper ${this.name} Article: ${artricle.name} Author: ${artricle.author} text: ${artricle.text}`
+      );
+    });
+  }
+};
 
 // functional experssion
 const getSumOfTwo = function (num1, num2) {
