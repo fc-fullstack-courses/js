@@ -31,7 +31,18 @@ function square(n) {
 const squareArr = (n) => n * n;
 
 const testStr = () => 'test';
+const testObj = () => ({});
 
+// const betterSum = (numbers) => {
+//   const sum = numbers.reduce((sum, number, index, arr) => {
+//     return sum + number;
+//   });
+
+//   return sum;
+// };
+const betterSum = (numbers) => numbers.reduce((sum, number) => sum + number);
+
+const res1 = betterSum([1, 2, 4, 6, 7, 8]);
 const testFunc = () => this;
 
 const newspaper = {
@@ -72,12 +83,12 @@ const newspaper = {
     this.articles.forEach(callback.bind(this));
   },
   betterShowArticles: function () {
-    this.articles.forEach( (artricle) => {
+    this.articles.forEach((artricle) => {
       console.log(
         `Newspaper ${this.name} Article: ${artricle.name} Author: ${artricle.author} text: ${artricle.text}`
       );
     });
-  }
+  },
 };
 
 // functional experssion
