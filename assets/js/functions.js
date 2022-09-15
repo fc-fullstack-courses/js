@@ -32,7 +32,7 @@ const getSumOfTwo = function (num1, num2) {
   // тело функции
   const result = +num1 + +num2;
 
-  return result;
+  // return result;
 };
 
 // functional declaration
@@ -41,34 +41,27 @@ function getSumOfTwo2(num1, num2) {
   const result = +num1 + +num2;
 }
 
-const test12345 = new getSumOfTwo2();
+// const test12345 = new getSumOfTwo2();
 
 const myFunc = function (num1, str2) {
   const test1 = 1;
   return test1;
 };
 
-myFunc(10, 'true');
-myFunc(-100, 'asfdshgfgfdsfd');
-myFunc(null, 500);
+// детерминированные функции - при одинаковых входных данных
+// одинаковые реузльтаты
+function sum(num1, num2) {
+  return num1 + num2;
+}
 
-// getSumOfTwo(10, 50);
-// getSumOfTwo(-5, 15);
-// const result = getSumOfTwo(input1, input2);
+// побочные эффекты - читать и модифицировать значения глобальных
+// переменных, осуществлять операции ввода-вывода,
+// реагировать на исключительные ситуации, вызывать их обработчики.
+let test = 1;
 
-// alert(result);
-
-// Реализовать функцию которая принимает имя пользователя
-// и будет с ним здороватся
-// const createGreeting = function (username) {
-//   const message = 'Hello ' + username;
-//   return message;
-// };
-
-// const greetMeMessage = createGreeting('Kyrylo');
-
-// alert(createGreeting('Kyrylo'));
-
-// console.log(test1234);
-
-// const test1234 = true;
+function sum2(num1, num2) {
+  test++;
+  return num1 + num2 + Math.random();
+}
+let test2;
+test2 = sum(2, 2);
