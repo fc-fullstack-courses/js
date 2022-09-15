@@ -75,3 +75,30 @@ const boolResult = Boolean(firstStr); // приведение к булевом�
 // ==================== Number ===============================
 
 const number = Number('12356'); // приведение к числу ===  +value
+
+const num4 = 0.1 + 0.2;
+const normalNum4 = +num4.toFixed(1);
+const num5 = (0.1 / 100 + 0.2 / 100) * 100;
+
+// ==================== MATH ===============================
+
+const number1 = Math.abs(-10);
+
+const root1 = Math.sqrt(4); // квадратный корень числа
+const root2 = Math.cbrt(9); // кубический корень числа
+
+const num1 = Math.round(3.2); // округление к ближайшему числу
+const num2 = Math.ceil(3.2); // округление к большему числу
+const num3 = Math.floor(3.2); // округление к меньшему числу
+
+const minNumber = Math.min(1, 2, 5, 8, 6, -10, -1000, 500); // ищет минимальное число из указанных
+const maxNumber = Math.max('1', '2', '5', '8', '6', '-10', ' -1000', ' 500'); // ищет max число из указанных
+console.log(Math.pow(-5, 2)); // возведение в степень
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function getRandomInt(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
