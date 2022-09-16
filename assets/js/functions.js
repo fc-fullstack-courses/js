@@ -139,3 +139,26 @@ function User(name = 'User', age = 5000, isLoggedIn = false) {
 const user1 = new User('Test', 40);
 const user2 = new User('Test', 40, 'gadost');
 const user3 = new User();
+
+// function recursive() {
+//   recursive();
+// }
+
+function countdown(number) {
+  // debugger;
+  console.log(number);
+
+  if (number > 1) {
+    // рекурсивный случай
+    countdown(number - 1);
+  }
+
+  return 'start'; // базовый случай
+}
+
+/*
+ Этапы рекурсии
+  1. вызываем рекурсивно функию пока выполняется условие
+  2. дохоим до базы рекурсии
+  3. все функции по порядку завершают работу
+*/
