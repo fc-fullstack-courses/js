@@ -140,12 +140,12 @@ const user1 = new User('Test', 40);
 const user2 = new User('Test', 40, 'gadost');
 const user3 = new User();
 
-// function recursive() {
-//   recursive();
-// }
+function recursive() {
+  recursive();
+}
 
 function countdown(number) {
-  // debugger;
+  debugger;
   console.log(number);
 
   if (number > 1) {
@@ -162,3 +162,38 @@ function countdown(number) {
   2. дохоим до базы рекурсии
   3. все функции по порядку завершают работу
 */
+
+/*
+  Создайте рекурсивную функцию, логирующую числа в диапазоне
+  диапазон указывается вами
+  logRange (5, 10)
+  logRange (10, 5)
+*/
+
+// function logRange(minNumber, maxNumber) {
+//   // debugger;
+//   if (maxNumber < minNumber) {
+//     logRange(maxNumber, minNumber);
+//   }
+
+//   if (minNumber < maxNumber) {
+//     console.log(minNumber);
+//     logRange(minNumber + 1, maxNumber);
+//   }
+
+//   if(minNumber === maxNumber) {
+//     console.log(minNumber);
+//   }
+// }
+
+function logRange(num1, num2) {
+  debugger;
+  const minNumber = Math.min(num1, num2);
+  const maxNumber = Math.max(num1, num2);
+
+  console.log(minNumber);
+
+  if (minNumber < maxNumber) {
+    logRange(minNumber + 1, maxNumber);
+  }
+}
