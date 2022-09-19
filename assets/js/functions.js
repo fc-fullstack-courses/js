@@ -197,3 +197,60 @@ function logRange(num1, num2) {
     logRange(minNumber + 1, maxNumber);
   }
 }
+
+const tree = {
+  value: 8,
+  left: {
+    value: 3,
+    left: {
+      value: 1,
+    },
+    right: {
+      value: 6,
+      left: {
+        value: 4,
+      },
+      right: {
+        value: 7,
+      },
+    },
+  },
+  right: {
+    value: 10,
+    right: {
+      value: 14,
+      left: {
+        value: 13,
+      },
+    },
+  },
+};
+
+const easyTree = {
+  value: 1,
+  left: {
+    value: 2,
+    left: {
+      value: 3,
+    },
+  },
+  right: {
+    value: 4,
+  },
+};
+
+function reduceTree(tree) {
+  // 1 нашли значение узла
+  let result = tree.value;
+
+  // 2 нашли сумму левых узлов
+  if (tree.left) {
+    result += reduceTree(tree.left);
+  }
+  // 3 нашли сумму правых узлов
+  if (tree.right) {
+    result += reduceTree(tree.right);
+  }
+  // 4 вернуть результат
+  return result;
+}
