@@ -254,3 +254,19 @@ function reduceTree(tree) {
   // 4 вернуть результат
   return result;
 }
+
+function toPower(number, exp) {
+  if (exp === 1) {
+    return number;
+  }else if (exp === 0) {
+    return 1;
+  }
+
+  if (exp > 0) {
+    return number * toPower(number, exp - 1);
+  }
+
+  if(exp < 0) {
+    return 1 / (number * toPower(number, Math.abs(exp) - 1))
+  }
+}
