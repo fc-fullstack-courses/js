@@ -256,17 +256,21 @@ function reduceTree(tree) {
 }
 
 function toPower(number, exp) {
+  // 1, 0
   if (exp === 1) {
     return number;
-  }else if (exp === 0) {
+  } else if (exp === 0) {
     return 1;
   }
 
-  if (exp > 0) {
-    return number * toPower(number, exp - 1);
-  }
+  // 2
+  // if (exp > 0) {
+  //   return number * toPower(number, exp - 1);
+  // } else {
+  //   return 1 / (number * toPower(number, Math.abs(exp) - 1));
+  // }
 
-  if(exp < 0) {
-    return 1 / (number * toPower(number, Math.abs(exp) - 1))
-  }
+  return exp > 0
+    ? number * toPower(number, exp - 1)
+    : 1 / (number * toPower(number, Math.abs(exp) - 1));
 }
