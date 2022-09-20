@@ -130,16 +130,6 @@ function sum2(num1 = 2, num2 = 3) {
 let test2;
 test2 = sum(2, 2);
 
-function User(name = 'User', age = 5000, isLoggedIn = false) {
-  this.name = name;
-  this.age = age;
-  this.isLoggedIn = isLoggedIn;
-}
-
-const user1 = new User('Test', 40);
-const user2 = new User('Test', 40, 'gadost');
-const user3 = new User();
-
 function recursive() {
   recursive();
 }
