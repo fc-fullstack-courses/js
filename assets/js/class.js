@@ -69,26 +69,12 @@ const MIN_ZP = 216.67; // 6500 /30
 
 class Worker {
   constructor(firstName, lastName, daysWorked = 0, paymentRate = MIN_ZP) {
-    if (typeof lastName !== 'string' || lastName.trim() === '') {
-      throw new TypeError('lastName must be not empty string');
-    }
-
-    if (typeof daysWorked !== 'number' || isNaN(daysWorked)) {
-      throw new TypeError('daysWorked must be not negative integer');
-    }
-
-    if (daysWorked < 0 || !Number.isInteger(daysWorked)) {
-      throw new RangeError('daysWorked must be not negative integer');
-    }
-
-    if (paymentRate < MIN_ZP) {
-      paymentRate = MIN_ZP;
-    }
-
+    // используем сеттер, будут все проверки сеттера
     this.firstName = firstName;
-    this._lastName = lastName.trim();
-    this._paymentRate = paymentRate;
-    this._daysWorked = daysWorked;
+    this.lastName = lastName;
+    this.paymentRate = paymentRate;
+    this.daysWorked = daysWorked;
+
   }
 
   // getter - спец метод обьекта, который не принимет параметров
@@ -118,11 +104,37 @@ class Worker {
     if (typeof newFirstName !== 'string' || newFirstName.trim() === '') {
       throw new TypeError('firstName must be not empty string');
     }
-
+    // зашиваем свойство вручную 
     this._firstName = newFirstName.trim();
   }
+  set lastName(lastName) {
+    if (typeof lastName !== 'string' || lastName.trim() === '') {
+      throw new TypeError('firstName must be not empty string');
+    }
+    // зашиваем свойство вручную 
+    this._lastName = lastName.trim();
+  }
+  set daysWorked(daysWorked) {
+    if (typeof daysWorked !== 'number' || isNaN(daysWorked)) {
+      throw new TypeError('daysWorked must be not negative integer');
+    }
 
-  getWorkerPayment() {
+    if (daysWorked < 0 || !Number.isInteger(daysWorked)) {
+      throw new RangeError('daysWorked must be not negative integer');
+    }
+
+    // зашиваем свойство вручную 
+    this._daysWorked = daysWorked;
+  }
+  set paymentRate(paymentRate) {
+    if (paymentRate < MIN_ZP) {
+      paymentRate = MIN_ZP;
+    }
+    // зашиваем свойство вручную 
+    this._paymentRate = paymentRate;
+  }
+
+  get workerPayment() {
     return this._daysWorked * this._paymentRate;
   }
 }
