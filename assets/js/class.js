@@ -68,20 +68,23 @@ const betterUser2 = new User('Test', 'Test 123', 19);
 const MIN_ZP = 216.67; // 6500 /30
 
 class Worker {
+  // обьявил приватное поле
+  #firstName;
+
   constructor(firstName, lastName, daysWorked = 0, paymentRate = MIN_ZP) {
     // используем сеттер, будут все проверки сеттера
     this.firstName = firstName;
     this.lastName = lastName;
     this.paymentRate = paymentRate;
     this.daysWorked = daysWorked;
-
   }
 
   // getter - спец метод обьекта, который не принимет параметров
   // и возвращает значение
   // используется для чтения виртуальных свойств
   get firstName() {
-    return this._firstName;
+    // private field
+    return this.#firstName;
   }
   get lastName() {
     return this._lastName;
@@ -94,7 +97,7 @@ class Worker {
   }
 
   get fullName() {
-    return `${this._firstName} ${this._lastName}`;
+    return `${this.#firstName} ${this._lastName}`;
   }
 
   // setter - спец метод обьекта, который принимает один параметр
@@ -104,14 +107,14 @@ class Worker {
     if (typeof newFirstName !== 'string' || newFirstName.trim() === '') {
       throw new TypeError('firstName must be not empty string');
     }
-    // зашиваем свойство вручную 
-    this._firstName = newFirstName.trim();
+    // зашиваем свойство вручную
+    this.#firstName = newFirstName.trim();
   }
   set lastName(lastName) {
     if (typeof lastName !== 'string' || lastName.trim() === '') {
       throw new TypeError('firstName must be not empty string');
     }
-    // зашиваем свойство вручную 
+    // зашиваем свойство вручную
     this._lastName = lastName.trim();
   }
   set daysWorked(daysWorked) {
@@ -123,22 +126,45 @@ class Worker {
       throw new RangeError('daysWorked must be not negative integer');
     }
 
-    // зашиваем свойство вручную 
+    // зашиваем свойство вручную
     this._daysWorked = daysWorked;
   }
   set paymentRate(paymentRate) {
     if (paymentRate < MIN_ZP) {
       paymentRate = MIN_ZP;
     }
-    // зашиваем свойство вручную 
+    // зашиваем свойство вручную
     this._paymentRate = paymentRate;
   }
 
   get workerPayment() {
     return this._daysWorked * this._paymentRate;
   }
+
+  // приватный метод
+  #isAdult() {
+    return true;
+  }
+
+  isReallyAdult() {
+    if (Math.random() > 0.5) {
+      return this.#isAdult();
+    }
+  }
+
+  // статический метод
+  // сидит у класса
+  // Worker.isWorker
+  static isWorker (obj) {
+    return obj instanceof Worker;
+  }
 }
 
 const worker1 = new Worker('Test', 'Testenko', 30, 100);
 const worker2 = new Worker('Director', 'Directorenko', 1000, 6500000);
 // const worker3 = new Worker(12321312321321, 'YHGahaks');
+
+function Test() {}
+Test.test = function () {
+  return true;
+};
