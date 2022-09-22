@@ -173,7 +173,8 @@ Test.test = function () {
 class Animal {
   #name;
 
-  constructor(name, color, diet) {
+  constructor(species, name, color, diet) {
+    this.species = species;
     this.name = name;
     this.color = color;
     this.diet = diet;
@@ -194,6 +195,10 @@ class Animal {
     this.#name = value;
   }
 
+  eat() {
+    return `${this.#name} is eating`;
+  }
+
   static isAnimal(obj) {
     return obj instanceof Animal;
   }
@@ -201,9 +206,32 @@ class Animal {
   static Pi = 3.14;
 }
 
-const animal1 = new Animal('Grizun');
+// const animal1 = new Animal('Grizun');
 
+/*
+OOП принципы
 
-if(Animal.isAnimal(animal1)) {
-  console.log('this is animal')
+1* абстракция - описываете обьект максимально достаточно для решения задачи
+2. инкапсуляция - сокрытия реализации обьекта / логики
+3. наследование - обьекты потомки могут наследовать свойства / методы а не пересоздавать их
+4. полиморфизм - повзоляет методам схожих классов реализовыватся по разному
+*/
+
+/* наследование */
+class Squirell extends Animal {
+  constructor(name, color) {
+    // вызывается конструктор Animal, и даем ему все необходимые вещи
+    super('squirell', name, color, 'acorn');
+  }
 }
+
+const sq = new Squirell('Gaika', 'brown');
+/*
+class User
+email
+password
+
+createMessage() -> '(user) created message'
+
+class Moder -> User
+*/
