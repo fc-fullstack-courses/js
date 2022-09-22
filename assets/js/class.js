@@ -69,6 +69,7 @@ class User {
   constructor(email, password) {
     this.email = email;
     this.password = password;
+    this.isBanned = false;
   }
 
   createMessage() {
@@ -76,7 +77,7 @@ class User {
   }
 }
 
-const u1 = new User('u@u', 123454543)
+const u1 = new User('u@u', 123454543);
 
 class Moder extends User {
   constructor(email, password, age) {
@@ -90,3 +91,30 @@ class Moder extends User {
 }
 
 const moder1 = new Moder('t1@t.t', 12345, 40);
+
+/*
+  создать класс Admin наследующийся от Moder
+  firstname, lastname - уникальные свойства админов
+
+  методы админов:
+  ban (user) -> баните юзера (меняете свойство на true)
+
+  *
+  unban (user)
+  сделайте так чтобы админы не могли банить других админов
+*/
+class Admin extends Moder {
+  constructor(email, password, age, first, last) {
+    super(email, password, age);
+
+    this.first = first;
+    this.last = last;
+    
+  }
+
+  ban(user) {
+    user.isBanned = true;
+  }
+}
+
+const adm = new Admin('a@a.a', 12345, 100, 'Tiran', 'Tiranovich');
