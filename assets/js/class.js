@@ -129,6 +129,7 @@ class Worker {
     // зашиваем свойство вручную
     this._daysWorked = daysWorked;
   }
+
   set paymentRate(paymentRate) {
     if (paymentRate < MIN_ZP) {
       paymentRate = MIN_ZP;
@@ -155,7 +156,7 @@ class Worker {
   // статический метод
   // сидит у класса
   // Worker.isWorker
-  static isWorker (obj) {
+  static isWorker(obj) {
     return obj instanceof Worker;
   }
 }
@@ -168,3 +169,41 @@ function Test() {}
 Test.test = function () {
   return true;
 };
+
+class Animal {
+  #name;
+
+  constructor(name, color, diet) {
+    this.name = name;
+    this.color = color;
+    this.diet = diet;
+  }
+
+  // методы обьекта
+  get name() {
+    // возвращает значение
+    return this.#name;
+  }
+
+  set name(value) {
+    if (typeof value !== 'string') {
+      throw new TypeError('Must be string');
+    }
+
+    // задает значение для свойства
+    this.#name = value;
+  }
+
+  static isAnimal(obj) {
+    return obj instanceof Animal;
+  }
+
+  static Pi = 3.14;
+}
+
+const animal1 = new Animal('Grizun');
+
+
+if(Animal.isAnimal(animal1)) {
+  console.log('this is animal')
+}
