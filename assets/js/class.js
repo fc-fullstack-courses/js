@@ -125,15 +125,27 @@ class Figure {
   constructor(name) {
     this.name = name;
   }
+
+  getArea() {
+    //1
+  }
+  // getArea (x) {
+  //   //2
+  // }
+  // getArea(x,y) {
+  //   //3
+  // }
 }
 
 class Triangle extends Figure {
   #a;
   #h;
-  constructor(a, h) {
+  constructor(a, h, b, c) {
     super('triangle');
     this.#a = a; // инкапсуляция параметров
     this.#h = h;
+    this.b = b;
+    this.c = c;
   }
 
   get side() {
@@ -152,18 +164,95 @@ class Triangle extends Figure {
     this.#a = a;
   }
 
-  getArea() {
-    return 0.5 * this.#a * this.#h; // скрыли вычислительную сложность
+  getArea(mode = 'height') {
+    switch (mode) {
+      case 'height': {
+        return 0.5 * this.#a * this.#h; // скрыли вычислительную сложность
+      }
+      case 'geron': {
+        const p = (this.#a + this.b + this.c) / 2;
+
+        return Math.sqrt(p * (p - this.#a) * (p - this.b) * (p - this.c));
+      }
+    }
   }
 }
 
-const triangle1 = new Triangle(10, 5);
-
 /*
   создайте класс Прямоугольника наслуддующегося от Фигуры
+  и для ромба
 
   реализуйте ему метод getArea, расчитывающий его площадь. 
   
   В конструкторе приймите необходимые для этого параметры
 
 */
+class Rectangle extends Figure {
+  #sideA;
+  #sideB;
+  constructor(a, b) {
+    super('rectangle');
+    this.sideA = a;
+    this.sideB = b;
+  }
+
+  get sideA() {
+    return this.#sideA;
+  }
+
+  get sideB() {
+    return this.#sideB;
+  }
+
+  set sideA(num) {
+    if (typeof num !== 'number' || isNaN(num)) {
+      throw new TypeError();
+    }
+
+    if (num <= 0) {
+      throw new RangeError();
+    }
+
+    this.#sideA = num;
+  }
+
+  set sideB(num) {
+    if (typeof num !== 'number' || isNaN(num)) {
+      throw new TypeError();
+    }
+
+    if (num <= 0) {
+      throw new RangeError();
+    }
+
+    this.#sideB = num;
+  }
+
+  getArea() {
+    return this.#sideA * this.#sideB;
+  }
+}
+
+class Rhombus extends Figure {
+  constructor(a, h) {
+    super('rhombus');
+    this.a = a;
+    this.h = h;
+  }
+
+  getArea() {
+    return this.a * this.h;
+  }
+}
+
+const fig1 = new Figure('some figure');
+const triangle1 = new Triangle(10, 5, 3, 8);
+const rect1 = new Rectangle(5, 8);
+const rhombus1 = new Rhombus(5, 7);
+
+function getFigureArea(figure, mode) {
+  if(figure instanceof Figure) {
+    return figure.getArea(mode);
+  }
+  throw new TypeError('not figure')
+}
