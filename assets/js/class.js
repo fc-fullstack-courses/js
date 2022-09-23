@@ -55,6 +55,8 @@ class Squirell extends Animal {
   }
 }
 
+class Dog extends Animal {}
+
 const sq = new Squirell('Gaika', 'brown');
 /*
 class User
@@ -109,7 +111,6 @@ class Admin extends Moder {
 
     this.first = first;
     this.last = last;
-    
   }
 
   ban(user) {
@@ -118,3 +119,51 @@ class Admin extends Moder {
 }
 
 const adm = new Admin('a@a.a', 12345, 100, 'Tiran', 'Tiranovich');
+
+// ИНКАПСУЛЯЦИЯ
+class Figure {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Triangle extends Figure {
+  #a;
+  #h;
+  constructor(a, h) {
+    super('triangle');
+    this.#a = a; // инкапсуляция параметров
+    this.#h = h;
+  }
+
+  get side() {
+    return this.#a;
+  }
+
+  get height() {
+    return this.#h;
+  }
+
+  set side(a) {
+    if (typeof a !== 'number' || isNaN(a)) {
+      throw new TypeError('Triangle side must be number');
+    }
+
+    this.#a = a;
+  }
+
+  getArea() {
+    return 0.5 * this.#a * this.#h; // скрыли вычислительную сложность
+  }
+}
+
+const triangle1 = new Triangle(10, 5);
+
+/*
+  создайте класс Прямоугольника наслуддующегося от Фигуры
+
+  реализуйте ему метод getArea, расчитывающий его площадь. 
+  
+  В конструкторе приймите необходимые для этого параметры
+
+*/
