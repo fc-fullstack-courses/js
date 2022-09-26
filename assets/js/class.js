@@ -1,63 +1,63 @@
 'use strict';
 
-class Animal {
-  #name;
+// class Animal {
+//   #name;
 
-  constructor(species, name, color, diet) {
-    this.species = species;
-    this.name = name;
-    this.color = color;
-    this.diet = diet;
-  }
+//   constructor(species, name, color, diet) {
+//     this.species = species;
+//     this.name = name;
+//     this.color = color;
+//     this.diet = diet;
+//   }
 
-  // методы обьекта
-  get name() {
-    // возвращает значение
-    return this.#name;
-  }
+//   // методы обьекта
+//   get name() {
+//     // возвращает значение
+//     return this.#name;
+//   }
 
-  set name(value) {
-    if (typeof value !== 'string') {
-      throw new TypeError('Must be string');
-    }
+//   set name(value) {
+//     if (typeof value !== 'string') {
+//       throw new TypeError('Must be string');
+//     }
 
-    // задает значение для свойства
-    this.#name = value;
-  }
+//     // задает значение для свойства
+//     this.#name = value;
+//   }
 
-  eat() {
-    return `${this.#name} is eating`;
-  }
+//   eat() {
+//     return `${this.#name} is eating`;
+//   }
 
-  static isAnimal(obj) {
-    return obj instanceof Animal;
-  }
+//   static isAnimal(obj) {
+//     return obj instanceof Animal;
+//   }
 
-  static Pi = 3.14;
-}
+//   static Pi = 3.14;
+// }
 
-// const animal1 = new Animal('Grizun');
+// // const animal1 = new Animal('Grizun');
 
-/*
-OOП принципы
+// /*
+// OOП принципы
 
-1* абстракция - описываете обьект максимально достаточно для решения задачи
-2. инкапсуляция - сокрытия реализации обьекта / логики
-3. наследование - обьекты потомки могут наследовать свойства / методы а не пересоздавать их
-4. полиморфизм - повзоляет методам схожих классов реализовыватся по разному
-*/
+// 1* абстракция - описываете обьект максимально достаточно для решения задачи
+// 2. инкапсуляция - сокрытия реализации обьекта / логики
+// 3. наследование - обьекты потомки могут наследовать свойства / методы а не пересоздавать их
+// 4. полиморфизм - повзоляет методам схожих классов реализовыватся по разному
+// */
 
-/* наследование */
-class Squirell extends Animal {
-  constructor(name, color) {
-    // вызывается конструктор Animal, и даем ему все необходимые вещи
-    super('squirell', name, color, 'acorn');
-  }
-}
+// /* наследование */
+// class Squirell extends Animal {
+//   constructor(name, color) {
+//     // вызывается конструктор Animal, и даем ему все необходимые вещи
+//     super('squirell', name, color, 'acorn');
+//   }
+// }
 
-class Dog extends Animal {}
+// class Dog extends Animal {}
 
-const sq = new Squirell('Gaika', 'brown');
+// const sq = new Squirell('Gaika', 'brown');
 /*
 class User
 email
@@ -251,10 +251,10 @@ const rect1 = new Rectangle(5, 8);
 const rhombus1 = new Rhombus(5, 7);
 
 function getFigureArea(figure, mode) {
-  if(figure instanceof Figure) {
+  if (figure instanceof Figure) {
     return figure.getArea(mode);
   }
-  throw new TypeError('not figure')
+  throw new TypeError('not figure');
 }
 /*
   Создать класс животное
@@ -271,3 +271,58 @@ function getFigureArea(figure, mode) {
 
   trainer.feed(snake)
 */
+class Animal {
+  #species;
+  #nickname;
+  constructor(species, nickname) {
+    this.#species = species;
+    this.#nickname = nickname;
+  }
+
+  get species() {
+    return this.#species;
+  }
+  get nickname() {
+    return this.#nickname;
+  }
+
+  speak() {
+    return `${this.#species} ${this.#nickname} is speaking`;
+  }
+
+  eat() {
+    return `${this.#species} ${this.#nickname} is eating`;
+  }
+}
+
+class Cat extends Animal {
+  constructor(nickname, speech = 'meow', diet = 'fish') {
+    super('Cat', nickname);
+    this.speech = speech;
+    this.diet = diet;
+  }
+
+  speak() {
+    return `${this.species} ${this.nickname} is ${this.speech}ing`;
+  }
+
+  eat() {
+    return `${this.species} ${this.nickname} is eating ${this.diet}`;
+  }
+}
+
+const cat1 = new Cat('Pushok');
+
+const trainer = {
+  trainVoice: function (animal) {
+    if (!animal instanceof Animal) {
+      throw new TypeError();
+    }
+    
+    if (Math.random() > 0.5) {
+      return `Trainer is training ${animal.nickname} voice
+${animal.speak()}`;
+    }
+    return `${animal.nickname} doesnt want to ${animal.speech}`
+  },
+};
