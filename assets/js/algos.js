@@ -53,17 +53,16 @@ const arr4 = [10, 20, 25, 37, 42, 60, 78, 99, 5000, 9999];
 function binarySearch(arr, searchItem) {
   let start = 0;
   let end = arr.length - 1;
-  let middle = Math.round((start + end) / 2);
+  let middle;
   // debugger;
   while (start <= end) {
+    middle = Math.floor((start + end) / 2);
     if (searchItem === arr[middle]) {
       return middle;
     } else if (searchItem > arr[middle]) {
       start = middle + 1;
-      middle = Math.floor((start + end) / 2);
     } else {
       end = middle - 1;
-      middle = Math.ceil((start + end) / 2);
     }
   }
 
