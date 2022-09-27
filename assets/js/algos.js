@@ -29,3 +29,21 @@ function linearSearch(arr, searchItem) {
 
   return -1;
 }
+
+const arr2 = [7, 2, 8, 0, 1, 3, 5, 6, 9];
+// O(n^2) - квадратичная сложность
+function bubbleSort(arr) {
+  for (let j = 0; j < arr.length; j++) {
+    // цикл который передвигает большее число в конец
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i + 1]) {
+        // меняем два значения местами в массиве
+        const swap = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = swap;
+      }
+    }
+  }
+
+  return arr;
+}
