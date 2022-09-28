@@ -36,11 +36,13 @@ function bubbleSort(arr) {
   for (let j = 0; j < arr.length; j++) {
     // цикл который передвигает большее число в конец
     for (let i = 0; i < arr.length; i++) {
-      if (arr[i] > arr[i + 1]) {
+      const cup1 = arr[i];
+      const cup2 = arr[i + 1];
+      if (cup1 > cup2) {
         // меняем два значения местами в массиве
-        const swap = arr[i];
-        arr[i] = arr[i + 1];
-        arr[i + 1] = swap;
+        const cup3 = cup1; // 3 чашка, сюда сначала льем сок
+        cup1 = cup2; // переливаем в чашку 1 воду
+        cup2 = cup3; // сливаем сок из 3 чашки
       }
     }
   }
