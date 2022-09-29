@@ -46,15 +46,15 @@ const phones = ['546846546316351', '6546546513135132', '3213153415641515'];
   arguments
   другие коллекции
 */
-for (const phone of phones) {
-  console.log(phone);
-}
+// for (const phone of phones) {
+//   console.log(phone);
+// }
 
 const str = 'sibd isab saiufhaiu bsb  i sdsa!';
 
-for (const letter of str) {
-  console.log(letter);
-}
+// for (const letter of str) {
+//   console.log(letter);
+// }
 /*
   создайте функцию
   

@@ -1,4 +1,3 @@
-
 class MyArray {
   constructor() {
     this.length = 0;
@@ -48,6 +47,20 @@ class MyArray {
     return newArray;
   }
 
+  [Symbol.iterator]() {
+    const context = this; // конкрентный массив
+    let i = 0; // текущий индекс
+
+    return {
+      next() {
+        return {
+          done: i >= context.length, // проверка закончили мі обход или нет
+          value: context[i++], // текущее значение
+        };
+      },
+    };
+  }
+
   static isMyArray(obj) {
     return obj instanceof MyArray;
   }
@@ -62,3 +75,9 @@ const myArr2 = myArr.concat(null, 40, 50, 60, myArr1);
 const arr = [1, 2];
 const arr2 = arr.concat(50, 60, true, ['test', undefined, null]);
 arr.unshift(10);
+
+for (const item of myArr) {
+  console.log('myArr');
+  console.log(item);
+  console.log('myArr');
+}
