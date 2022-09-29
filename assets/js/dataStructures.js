@@ -56,3 +56,27 @@ const names2 = ['Feofan', 'Simon', 'Stepan', 'Roman', 'Anton'];
 
 const uniqueNames = [...new Set([...names1, ...names2])];
 const uniqueNames1 = new Array(...new Set([...names1, ...names2]));
+
+set3.forEach((value, valueAgain, set) => {
+  console.log(value);
+  console.log(valueAgain);
+  console.log(set);
+});
+
+const setIter = set3.values(); // итератор
+
+for (const item of setIter) {
+  console.log(item);
+}
+
+// для сета set.keys = set.values
+
+for (const item of set3.keys()) {
+  console.log(item);
+}
+
+// 
+
+for (const item of set3.entries()) {
+  console.log(item); // массив с однотипной структурой - кортеж
+}
