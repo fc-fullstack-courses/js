@@ -29,5 +29,30 @@ const set3 = new Set([5, 7, 8, 9, 3, 8, 8, 6]);
 const names1 = ['Anton', 'Ivan', 'Petro', 'Anna'];
 const names2 = ['Feofan', 'Simon', 'Stepan', 'Roman', 'Anton'];
 
+// 1 отфильтровать имена так чтобы не было повторов
+// const nameSet = new Set();
 
-const uniqueNames = [] // повторялок не будет
+// for (const name of names1) {
+//   nameSet.add(name);
+// }
+
+// const nameSet = new Set(names1);
+// for (const name of names2) {
+//   nameSet.add(name);
+// }
+
+// const names3 = names1.concat(names2);
+// const nameSet = new Set(names3);
+
+// const nameSet = new Set(names1.concat(names2));
+
+// const nameSet = new Set([...names1, ...names2]);
+
+// 2 прийти от сета к массиву
+// const uniqueNames = []; // повторялок не будет
+// for (const name of nameSet) {
+//   uniqueNames.push(name);
+// }
+
+const uniqueNames = [...new Set([...names1, ...names2])];
+const uniqueNames1 = new Array(...new Set([...names1, ...names2]));
