@@ -116,6 +116,7 @@ console.log(map.has(999));
 console.log(map.has(123));
 
 map.delete(123);
+// map.clear();
 
 const map2 = new Map([
   ['key1', 'value1'],
@@ -126,4 +127,40 @@ const map2 = new Map([
   ['key6', 'value6'],
 ]);
 
-// map.clear();
+const vocabulary = new Map([
+  ['вітаю', 'hello'],
+  ['собака', 'dog'],
+  ['дякую', 'thanks'],
+  ['україна', 'Ukraine'],
+  ['осінь', 'autumn'],
+  ['навчання', 'study'],
+  ['погода', 'weather'],
+  ['розробник', 'developer'],
+  ['замовник', 'customer'],
+  [`комп'ютер`, 'PC'],
+]);
+
+const testString = `ЗамоВник собака дякую розРобник вітаю комп'ютер Україна осінь`;
+
+function translate(stringToTranslate, vocab) {
+  // привести все к одному регистру
+  const lowerCased = stringToTranslate.toLowerCase();
+  // разбить строку на слова
+  // ['замовник', 'собака']
+  const words = lowerCased.split(' ');
+  // создать массив / строчку в котору складывае первод (результат)
+  let translation = '';
+  // пройтись по массиву слов
+  for (const word of words) {
+    // сравнить с данными из словаря
+    // если есть то положить в результат
+    if (vocab.has(word)) {
+      translation += `${vocab.get(word)} `;
+    }
+  }
+
+  // если у нас результат это массив то его надо сделать строкой
+
+  // вернуть переведенную строку
+  return translation.trim();
+}
