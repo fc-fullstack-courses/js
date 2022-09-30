@@ -166,3 +166,28 @@ function translate(stringToTranslate, vocab) {
   // вернуть переведенную строку
   return translation.trim();
 }
+
+const translate2 = (stringToTranslate, vocab) => {
+  // привести все к одному регистру
+  const lowerCased = stringToTranslate.toLowerCase();
+  // разбить строку на слова
+  // ['замовник', 'собака']
+  const words = lowerCased.split(' ');
+  // создать массив / строчку в котору складывае первод (результат)
+  const translation = [];
+  // пройтись по массиву слов
+  for (const word of words) {
+    // сравнить с данными из словаря
+    // если есть то положить в результат
+    if (vocab.has(word)) {
+      translation.push(vocab.get(word));
+    } else {
+      translation.push(word);
+    }
+  }
+
+  // если у нас результат это массив то его надо сделать строкой
+
+  // вернуть переведенную строку
+  return translation.join(' ');
+};
