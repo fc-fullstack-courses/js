@@ -140,7 +140,7 @@ const vocabulary = new Map([
   [`комп'ютер`, 'PC'],
 ]);
 
-const testString = `ЗамоВник собака дякую розРобник вітаю комп'ютер Україна осінь`;
+const testString = `ЗамоВник собака гепард дякую розРобник вітаю комп'ютер Україна осінь`;
 
 function translate(stringToTranslate, vocab) {
   // привести все к одному регистру
@@ -156,6 +156,8 @@ function translate(stringToTranslate, vocab) {
     // если есть то положить в результат
     if (vocab.has(word)) {
       translation += `${vocab.get(word)} `;
+    } else {
+      translation += `${word} `;
     }
   }
 
