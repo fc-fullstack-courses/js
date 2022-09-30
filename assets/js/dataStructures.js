@@ -175,9 +175,24 @@ const translate2 = (stringToTranslate, vocab) =>
     .join(' ');
 
 /*
-if (vocab.has(word)) {
-      translation.push(vocab.get(word));
-    } else {
-      translation.push(word);
-    }
+
+*/
+
+const user1 = {
+  id: 1,
+  name: 'Test test',
+};
+
+const user2 = {
+  id: 2,
+  name: 'Null Null',
+};
+
+const messages1 = ['hi!', 'good', 'bye!'];
+const messages2 = ['hello', 'how are you?', 'bye!'];
+
+/*
+Связать массивы сообщений с пользователями через Map
+написать функцию, которой вы передаете пользователя а она 
+возвращает массив его сообщений
 */
