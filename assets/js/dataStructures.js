@@ -196,3 +196,17 @@ const messages2 = ['hello', 'how are you?', 'bye!'];
 написать функцию, которой вы передаете пользователя а она 
 возвращает массив его сообщений
 */
+const userToMessagesMap = new Map([
+  [user1, messages1],
+  [user2, messages2],
+]);
+
+function getUserMessages(user) {
+  if (userToMessagesMap.has(user)) {
+    return userToMessagesMap.get(user);
+  }
+
+  throw new Error('User not found');
+}
+
+const messsage1 = getUserMessages(user1)[0];
