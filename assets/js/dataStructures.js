@@ -232,3 +232,11 @@ for (const entry of userToMessagesMap.entries()) {
 for (const entry of userToMessagesMap) {
   console.log(entry);
 }
+
+const newUserToMesssagesMap = new Map([...userToMessagesMap]);
+
+const user1Keys = Object.keys(user1); // массив строки
+const user1Values = Object.values(user1); // массив знавчений
+const user1Entries = Object.entries(user1); // массив кортежей [ключ, значение]
+
+const userMap = new Map(user1Entries);
