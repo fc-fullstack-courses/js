@@ -210,3 +210,25 @@ function getUserMessages(user) {
 }
 
 const messsage1 = getUserMessages(user1)[0];
+
+userToMessagesMap.forEach((value, key, map) => {
+  // console.log(value);
+  // console.log(key);
+  // console.log(map);
+});
+
+for (const key of userToMessagesMap.keys()) {
+  console.log(key);
+}
+
+for (const value of userToMessagesMap.values()) {
+  console.log(value);
+}
+
+for (const entry of userToMessagesMap.entries()) {
+  console.log(entry);
+}
+
+for (const entry of userToMessagesMap) {
+  console.log(entry);
+}
