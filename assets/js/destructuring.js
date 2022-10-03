@@ -58,6 +58,7 @@ const {
     height: { value: tableHeightValue, unit: tableHeightUnit },
     width: { unit: tableWidthValue, value: tableWidthUnit },
   },
+  shelves: [[book], [{ itemType }], thirdShelf],
 } = table;
 
 const tableHeight2 = `${tableHeightValue} ${tableHeightUnit}`;
@@ -72,3 +73,26 @@ const {
 // const { height, ...restDimensions } = dimensions;
 
 shelflessTable.dimensions = restDimensions;
+
+// деструктуризация массивов
+
+const arr = [1, 2, [3, 45, 5], 78, 6];
+
+// const first = arr[0];
+
+const [, , [test], fourth] = arr;
+
+const [, , ...newArr] = arr;
+
+const fullName = 'Test Testenko';
+const [fisrtName, lastName] = fullName.split(' ');
+
+const [test1, test2] = fullName;
+
+let value1 = true;
+let value2 = false;
+
+// let value3 = value1;
+// value1 = value2;
+// value2 = value3;
+[value2, value1] = [value1, value2];
