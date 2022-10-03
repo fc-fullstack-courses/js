@@ -52,8 +52,12 @@ const tableHeight = `${table.dimensions.height.value} ${table.dimensions.height.
 
 const {
   material,
-  dimensions: { height },
-  dimensions
+  dimensions: {
+    height: { value: tableHeightValue, unit: tableHeightUnit },
+    width: {unit, value}
+  },
+  dimensions,
 } = table;
 
-const tableHeight2 = `${value} ${unit}`;
+const tableHeight2 = `${tableHeightValue} ${tableHeightUnit}`;
+const tableWidth = `${value} ${unit}`;
