@@ -1,3 +1,4 @@
+'use strict';
 // деструктуризация обьектов
 
 const table = {
@@ -96,3 +97,46 @@ let value2 = false;
 // value1 = value2;
 // value2 = value3;
 [value2, value1] = [value1, value2];
+
+// деструктуризацию параметров функций
+const user1 = {
+  firstName: 'User',
+  lastName: 'Userenko',
+  isMale: true,
+  age: 18,
+};
+const user2 = {
+  firstName: 'User',
+  lastName: 'Userenko',
+  isMale: true,
+  age: 19,
+};
+const user3 = {
+  firstName: 'User',
+  lastName: 'Userenko',
+  isMale: true,
+  age: 20,
+};
+
+function greetUser(
+  { firstName, lastName, ...restOfUser },
+  otherParam,
+  ...restParams
+) {
+  // const { firstName, lastName } = user;
+  console.log(restOfUser);
+  console.log(otherParam);
+  console.log(restParams);
+  return `Hello ${firstName} ${lastName}`;
+}
+
+const users = [user1, user2, user3];
+
+// for (const { age } of users) {
+//   console.log(age);
+// }
+
+for (const [key, value] of Object.entries(user1)) {
+  console.log(`key - ${key}`);
+  console.log(`value - ${value}`);
+}
