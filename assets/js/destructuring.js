@@ -33,7 +33,9 @@ const table = {
     ],
     [
       {
-        itemType: 'notebook',
+        itemType: 'money',
+        amount: 500000,
+        currencyType: 'USD',
       },
     ],
   ],
@@ -54,10 +56,19 @@ const {
   material,
   dimensions: {
     height: { value: tableHeightValue, unit: tableHeightUnit },
-    width: {unit, value}
+    width: { unit: tableWidthValue, value: tableWidthUnit },
   },
-  dimensions,
 } = table;
 
 const tableHeight2 = `${tableHeightValue} ${tableHeightUnit}`;
-const tableWidth = `${value} ${unit}`;
+const tableWidth = `${tableWidthValue} ${tableWidthUnit}`;
+
+const {
+  shelves,
+  dimensions: { height, ...restDimensions },
+  ...shelflessTable
+} = table;
+
+// const { height, ...restDimensions } = dimensions;
+
+shelflessTable.dimensions = restDimensions;
