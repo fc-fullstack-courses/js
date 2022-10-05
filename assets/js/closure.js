@@ -30,23 +30,41 @@ function wrapper() {
 // console.log(counter());
 // console.log(counter());
 
+// function makeCounter() {
+//   let counter = 0; // замыкание. инкапсулированная переменная
+
+//   function incrementCounter() {
+//     debugger;
+//     counter++;
+
+//     return counter;
+//   }
+
+//   return incrementCounter;
+// }
+// const increment1 = makeCounter();
+// console.log(increment1());
+// console.log(increment1());
+// console.log(increment1());
+
+// const increment2 = makeCounter();
+// console.log(increment2());
+// console.log(increment2());
+
 function makeCounter() {
   let counter = 0; // замыкание. инкапсулированная переменная
 
-  function incrementCounter() {
-    debugger;
-    counter++;
-
-    return counter;
-  }
-
-  return incrementCounter;
+  return {
+    increment: function () {
+      return ++counter;
+    },
+    decrement: function () {
+      return --counter;
+    },
+  };
 }
-const increment1 = makeCounter();
-console.log(increment1());
-console.log(increment1());
-console.log(increment1());
 
-const increment2 = makeCounter();
-console.log(increment2());
-console.log(increment2());
+const counter1 = makeCounter();
+console.log(counter1.increment());
+console.log(counter1.increment());
+console.log(counter1.decrement());
