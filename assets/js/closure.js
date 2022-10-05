@@ -68,3 +68,31 @@ const counter1 = makeCounter();
 console.log(counter1.increment());
 console.log(counter1.increment());
 console.log(counter1.decrement());
+/*
+  написать функцию createAdder(num)
+  и возвращает другую функцию
+
+  возвращенная функция должна складывать получаемый ею аргумент
+  с аргументом num
+
+  const adder = createAdder(100)
+  adder(50) -> 150
+  adder(25) -> 175 
+  adder(100) -> 275
+*/
+
+// function createAdder(num) {
+//   return function (number) {
+//     return (num += number);
+//   };
+// }
+const createAdder = (state) => (number) => (state += number);
+
+const adder = createAdder(100);
+console.log(adder(50));
+console.log(adder(25));
+console.log(adder(100));
+
+// const test = function horror() {
+//   debugger;
+// };
