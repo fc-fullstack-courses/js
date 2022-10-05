@@ -17,5 +17,36 @@ function wrapper() {
   log();
 }
 
+// wrapper();
 
-wrapper();
+// let i = 0;
+
+// function counter() {
+//   i++;
+//   return i;
+// }
+
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+function makeCounter() {
+  let counter = 0; // замыкание. инкапсулированная переменная
+
+  function incrementCounter() {
+    debugger;
+    counter++;
+
+    return counter;
+  }
+
+  return incrementCounter;
+}
+const increment1 = makeCounter();
+console.log(increment1());
+console.log(increment1());
+console.log(increment1());
+
+const increment2 = makeCounter();
+console.log(increment2());
+console.log(increment2());
